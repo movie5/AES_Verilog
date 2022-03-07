@@ -41,5 +41,6 @@ always @*
     assign out[111:104] = tem[111:104];
     assign out[119:112] = tem[119:112];
     assign out[127:120] = tem[127:120];
+  end
     
 endmodule
