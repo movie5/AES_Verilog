@@ -4,7 +4,7 @@ module subByte(
   input [127:0] in,
   output [127:0] out
 );
-  reg [128:0] tem;
+  reg [127:0] tem;
   
 always @*
   begin
@@ -24,7 +24,8 @@ always @*
     s_box u13(tem[111:104], in[111:104]);
     s_box u14(tem[119:112], in[119:112]);
     s_box u15(tem[127:120], in[127:120]);
-  
+    
+  end
     assign out[7:0] = tem[7:0];
     assign out[15:8] = tem[15:8];
     assign out[23:16] = tem[23:16];
@@ -41,6 +42,5 @@ always @*
     assign out[111:104] = tem[111:104];
     assign out[119:112] = tem[119:112];
     assign out[127:120] = tem[127:120];
-  end
-    
+
 endmodule
