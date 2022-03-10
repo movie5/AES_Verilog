@@ -24,7 +24,7 @@ begin
             tmp[7:0] = in2;
             for(j=1; j<=i; j=j+1) begin
                 tmp = tmp << 1;
-                #5;
+                #1;
                 if(tmp[8] == 1'b1) begin
                     //#5;
                     tmp[8] = 1'b0;
