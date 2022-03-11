@@ -35,15 +35,15 @@ assign s2 = in_word[15:8];
 assign s3 = in_word[7:0];
 
 
-GF_Multiplier2 gm1 (8'b00000010, s0, s0_m2);
-GF_Multiplier2 gm2 (8'b00000010, s1, s1_m2);
-GF_Multiplier2 gm3 (8'b00000010, s2, s2_m2);
-GF_Multiplier2 gm4 (8'b00000010, s3, s3_m2);
+GF_Multiplier gm1 (8'b00000010, s0, s0_m2);
+GF_Multiplier gm2 (8'b00000010, s1, s1_m2);
+GF_Multiplier gm3 (8'b00000010, s2, s2_m2);
+GF_Multiplier gm4 (8'b00000010, s3, s3_m2);
 
-GF_Multiplier2 gm5 (8'b00000011, s0, s0_m3);
-GF_Multiplier2 gm6 (8'b00000011, s1, s1_m3);
-GF_Multiplier2 gm7 (8'b00000011, s2, s2_m3);
-GF_Multiplier2 gm8 (8'b00000011, s3, s3_m3);
+GF_Multiplier gm5 (8'b00000011, s0, s0_m3);
+GF_Multiplier gm6 (8'b00000011, s1, s1_m3);
+GF_Multiplier gm7 (8'b00000011, s2, s2_m3);
+GF_Multiplier gm8 (8'b00000011, s3, s3_m3);
 
 assign s0_o = s0_m2 ^ s1_m3 ^ s2 ^ s3;
 assign s1_o = s0 ^ s1_m2 ^ s2_m3 ^ s3;
