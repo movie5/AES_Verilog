@@ -1,17 +1,20 @@
 `timescale 1ns / 1ps
 
-//register, 9번 돌아가기 위해
+
 module pipe(
-    input [127:0] in,  //mux의 결과에 따라 pre-round의 결과나 round의 결과를 받는다
+    input [127:0] in,
+    input en,
     input clk,
-    output [127:0] out // 다음 round의 input
+    output [127:0] out
     );
     
     reg tmp;
     
-    always @(posedge clk) //clk+
+    always @(posedge clk)
     begin
-        tmp <= in; 
+        if(en == 1'b1)
+            tmp <= in;
+        else continue;
     end
     
     assign out = tmp;
