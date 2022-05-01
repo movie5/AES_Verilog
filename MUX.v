@@ -1,9 +1,9 @@
 `timescale 1ns / 1ps
 
 module MUX(
-    input [127:0] in1, // pre-round
-    input [127:0] in2, // round-key
-    input sel, // 0 for pre to round, 1 for round to round
+    input [127:0] in1,
+    input [127:0] in2,
+    input sel,
     output [127:0] out
     );
     
