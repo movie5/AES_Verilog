@@ -30,9 +30,9 @@ module controller(
     
     always @(posedge clk)
     begin
-        if(en == 1'b0)
+        if(en == 1'b0) // cnt == 0, round 계산 하지 않음
             count <= 4'b0000;
-        else if(en == 1'b0)
+        else if(en == 1'b0) //cnt += 1
             count <= count + 4'b0001;
         else continue;
     end
@@ -40,8 +40,8 @@ module controller(
     always @(count)
     begin
         case(count)
-            4'b0000: sel <= 1'b0;
-            4'b0001: sel <= 1'b1;
+            4'b0000: sel <= 1'b0; //count ==0이면 sel ==0
+            4'b0001: sel <= 1'b1; //count ==1 이상이면 sel ==1
             4'b0010: sel <= 1'b1;
             4'b0011: sel <= 1'b1;
             4'b0100: sel <= 1'b1;
@@ -50,7 +50,7 @@ module controller(
             4'b0111: sel <= 1'b1;
             4'b1000: sel <= 1'b1;
             4'b1001: sel <= 1'b1;
-            default: sel <= 1'b1;
+            default: sel <= 1'b1; //count ==9까지 sel ==1
         endcase
     
     end
